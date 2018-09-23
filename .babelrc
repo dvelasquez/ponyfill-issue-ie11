@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    "transform-custom-element-classes",
+    "transform-es2015-classes"
+  ],
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": [ ">0.25%", "ie 11", "not op_mini all"]
+      }
+    }]
+  ]
+}
