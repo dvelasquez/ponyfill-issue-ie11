@@ -2,4 +2,4 @@
 import cssVars from 'css-vars-ponyfill';
 import './elements/TestShadow';
 // @ts-ignore
-cssVars({updateDom: true});
+cssVars({updateDom: true, shadowDOM: true});
