@@ -1,35 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vanilla-listing-item</title>
-  <script type="application/javascript" src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
-  <script type="application/javascript" src="//unpkg.com/@webcomponents/webcomponentsjs@2.0.4/webcomponents-loader.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://static.yapo.cl/shared/fonts/fa-5.0.13/css/fontawesome-all.css">
-  <style>
+<html>
+  <head>
+    <title>Vanilla TS POC</title>
+    <script type="application/javascript" src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script type="application/javascript" src="//unpkg.com/@webcomponents/webcomponentsjs@2.0.4/webcomponents-loader.js"></script>
+    <style>
       :root {
-        --test-color: blue;
-      }
-      * {
-        box-sizing: border-box;
-      }
+          --BORDER-SMALL:1px;
+          --BORDER-COLOR:#eaeaea;
 
-      body {
-        background: #F8F8F8;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-      }
+          --GRID-XS:4px;
+          --GRID-S:8px;
+          --GRID-BASE: 16px;
+          --GRID-L:24px;
+          --GRID-XL:32px;
+          --GRID-XXL: 48px;
 
-      listing-item {
-        width: 100%;
+          --TYPOGRAPHY-BASE-SIZE: 1.6em;
+          --TYPOGRAPHY-BASE-LINE: 1;
+
+          --COLOR-PRIMARY: #69f;
+          --COLOR-SECONDARY: #58e;
+          --COLOR-ACCENT: red;
+          --COLOR-BACKGROUND: #ddd;
+      }
+      button {
+        background-color: red;
+        padding: 5px 10px;
+        color: white;
       }
     </style>
-</head>
-<body>
-      <test-shadow>
-        <span slot="content">this text should be blue</span>
-      </test-shadow>
-</body>
+  </head>
+  <body>
+    <delta-vanilla-accordion>
+      <delta-vanilla-accordion-item active="true">
+        <delta-vanilla-accordion-summary>
+          First label
+        </delta-vanilla-accordion-summary>
+        <delta-vanilla-accordion-details>
+          <button id="hello">
+            hello
+          </button>
+          <p>
+            Ut a accumsan quam. Suspendisse suscipit
+            vehicula magna, at fermentum est faucibus at.
+            Proin luctus erat dolor, quis consectetur
+             enim mollis nec.
+          </p>
+        </delta-vanilla-accordion-details>
+      </delta-vanilla-accordion-item>
+      <delta-vanilla-accordion-item>
+        <delta-vanilla-accordion-summary>
+          Second label
+        </delta-vanilla-accordion-summary>
+        <delta-vanilla-accordion-details>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Nam sit amet augue nunc.
+            Cras dui mauris, dictum id.
+          </p>
+          <p>
+            Ut a accumsan quam. Suspendisse suscipit
+            vehicula magna, at fermentum est faucibus at.
+            Proin luctus erat dolor, quis consectetur
+             enim mollis nec.
+          </p>
+        </delta-vanilla-accordion-details>
+      </delta-vanilla-accordion-item>
+    </delta-vanilla-accordion>
+    <script type="text/javascript">
+      window.addEventListener('load', function () {
+        document.getElementById('hello').addEventListener('click', function () {
+          alert('Hello world')
+        })
+
+        document.querySelector('delta-vanilla-accordion').addEventListener('change', function (e) {
+          console.log('Moved from panel #' + e.detail.previousPanel + ' to panel #' + e.detail.currentPanel)
+        })
+      })
+    </script>
+  </body>
 </html>
+

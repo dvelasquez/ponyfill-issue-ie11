@@ -1,5 +1,4 @@
-// @ts-ignore
-import cssVars from 'css-vars-ponyfill';
-import './elements/TestShadow';
-// @ts-ignore
-cssVars({updateDom: true, shadowDOM: true});
+import './elements/accordion';
+import './elements/accordion-details';
+import './elements/accordion-item';
+import './elements/accordion-summary';
